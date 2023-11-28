@@ -72,14 +72,11 @@ public class Function
             }
         };
 
-        // Оновлено: Додано параметри пагінації
         var user1Results = await _context.FromQueryAsync<Chat>(user1).GetRemainingAsync();
         var user2Results = await _context.FromQueryAsync<Chat>(user2).GetRemainingAsync();
 
-        // Об'єднати результати обох запитів та сортувати
         var allChats = user1Results.Concat(user2Results).OrderBy(x => x.UpdateDt).ToList();
 
-        // Застосувати пагінацію
         if (pageSize.HasValue && pageNumber.HasValue)
         {
             allChats = allChats.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value).ToList();
