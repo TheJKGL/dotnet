@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GetAllChats/Function.cs">
+    <Files>
+      <File FileName="GetMessages/Function.cs" Line="1" Column="1" />
+      <File FileName="GetAllChats/Function.cs" Line="71" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lambdas" expanded="True">
+            <Node name="GetAllChats" expanded="True">
+              <Node name="Function.cs" selected="True" />
+            </Node>
+            <Node name="GetMessages" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

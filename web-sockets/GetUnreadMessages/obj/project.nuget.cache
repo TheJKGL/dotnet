@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "sNg89/JRBHfoHrzzaYXw+Rl+lYsHIHkdpb5WW2zNfQ4eor+iHp+dtnYR79Y3avV0doJXr9kEJG/L8nBOQhAkDw==",
+  "success": true,
+  "projectFilePath": "/Users/yema/Downloads/dotnet/web-sockets/GetUnreadMessages/GetUnreadMessages.csproj",
+  "expectedPackageFiles": [
+    "/Users/yema/.nuget/packages/amazon.lambda.apigatewayevents/2.7.0/amazon.lambda.apigatewayevents.2.7.0.nupkg.sha512",
+    "/Users/yema/.nuget/packages/amazon.lambda.core/2.2.0/amazon.lambda.core.2.2.0.nupkg.sha512",
+    "/Users/yema/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.4.0/amazon.lambda.serialization.systemtextjson.2.4.0.nupkg.sha512",
+    "/Users/yema/.nuget/packages/awssdk.core/3.7.300/awssdk.core.3.7.300.nupkg.sha512",
+    "/Users/yema/.nuget/packages/awssdk.dynamodbv2/3.7.300/awssdk.dynamodbv2.3.7.300.nupkg.sha512",
+    "/Users/yema/.nuget/packages/microsoft.netcore.app.crossgen2.osx-arm64/6.0.25/microsoft.netcore.app.crossgen2.osx-arm64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
