@@ -31,7 +31,7 @@ public class Function
         int? pageSize = Convert.ToInt32(request.QueryStringParameters["pageSize"]);
         int? pageNumber = Convert.ToInt32(request.QueryStringParameters["pageNumber"]);
 
-        List<Chat> chats = await GetAllChats(userId);
+        List<Chat> chats = await GetAllChats(userId, pageSize, pageNumber);
 
         var result = new List<GetAllChatsResponseItem>(chats.Count);
 
@@ -50,7 +50,7 @@ public class Function
         };
     }
 
-    private async Task<List<Chat>> GetAllChats(string userId)
+    private async Task<List<Chat>> GetAllChats(string userId, int? pageSize, int? pageNumber)
     {
         var user1 = new QueryOperationConfig()
         {
