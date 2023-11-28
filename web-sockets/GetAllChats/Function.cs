@@ -27,12 +27,16 @@ public class Function
     {
         var userId = request.QueryStringParameters["userId"];
 
+        // Отримати параметри пагінації (якщо вони доступні в запиті)
+        int? pageSize = Convert.ToInt32(request.QueryStringParameters["pageSize"]);
+        int? pageNumber = Convert.ToInt32(request.QueryStringParameters["pageNumber"]);
+
         List<Chat> chats = await GetAllChats(userId);
 
         var result = new List<GetAllChatsResponseItem>(chats.Count);
 
-		// TODO 
-		
+		// TODO: Додати інформацію про чати та їх учасників до результату
+
         return new APIGatewayProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,
@@ -57,7 +61,6 @@ public class Function
                 ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>() { { ":user", userId } }
             }
         };
-        var user1Results = await _context.FromQueryAsync<Chat>(user1).GetRemainingAsync();
 
         var user2 = new QueryOperationConfig()
         {
@@ -68,9 +71,20 @@ public class Function
                 ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>() { { ":user", userId } }
             }
         };
+
+        // Оновлено: Додано параметри пагінації
+        var user1Results = await _context.FromQueryAsync<Chat>(user1).GetRemainingAsync();
         var user2Results = await _context.FromQueryAsync<Chat>(user2).GetRemainingAsync();
 
-        user1Results.AddRange(user2Results);
-        return user1Results.OrderBy(x => x.UpdateDt).ToList();
+        // Об'єднати результати обох запитів та сортувати
+        var allChats = user1Results.Concat(user2Results).OrderBy(x => x.UpdateDt).ToList();
+
+        // Застосувати пагінацію
+        if (pageSize.HasValue && pageNumber.HasValue)
+        {
+            allChats = allChats.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value).ToList();
+        }
+
+        return allChats;
     }
 }
