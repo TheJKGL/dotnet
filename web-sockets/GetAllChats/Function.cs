@@ -35,8 +35,6 @@ public class Function
 
         var result = new List<GetAllChatsResponseItem>(chats.Count);
 
-		// TODO: Додати інформацію про чати та їх учасників до результату
-
         return new APIGatewayProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,

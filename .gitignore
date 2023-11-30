@@ -1,0 +1,12 @@
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
